@@ -1,4 +1,4 @@
-const PINECONE_INDEX_NAME = 'langchainjsfundamentals';
+const PINECONE_INDEX_NAME = 'gridbottest';
 
 const PINECONE_NAME_SPACE = 'notion-chatgpt-langchain'; //namespace is optional for your vectors
 

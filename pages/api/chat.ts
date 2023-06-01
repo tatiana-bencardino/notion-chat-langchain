@@ -11,7 +11,7 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   const { question } = req.body;
-
+  console.log('This is the question: ', question);
   if (!question) {
     return res.status(400).json({ message: 'No question in the request' });
   }
@@ -21,6 +21,7 @@ export default async function handler(
     const sanitizedQuestion = question.trim().replaceAll('\n', ' ');
 
     const index = pinecone.Index(PINECONE_INDEX_NAME);
+    console.log('Sanitise qwestion');
     /* create vectorstore*/
     const vectorStore = await PineconeStore.fromExistingIndex(
       index,
@@ -32,7 +33,7 @@ export default async function handler(
     const model = openai;
     // create the chain
     const chain = VectorDBQAChain.fromLLM(model, vectorStore);
-
+    console.log('Asking question');
     //Ask a question
     const response = await chain.call({
       query: sanitizedQuestion,

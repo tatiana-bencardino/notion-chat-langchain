@@ -65,7 +65,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <section className="container max-w-xl mx-auto pt-4 pb-6 md:pt-8 md:pb-10 lg:pt-10 lg:pb-16">
+      <section className="container max-w-lg mx-auto pb-6 md:pt-8 md:pb-10 lg:pt-10 lg:pb-16">
         <div className="mx-auto flex flex-col gap-4">
           {questions.map((item, i) => {
             return (
